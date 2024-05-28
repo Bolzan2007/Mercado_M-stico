@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Fundo para contraste */
+}
+
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Jockey One', sans-serif;
+}
+
+.brand-title {
+    font-size: 24px;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-bar {
+    width: 200px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar::placeholder {
+    color: #888;
+}
+
+.background-image {
+    margin-top: 60px; /* Espaço para a navbar fixa */
+    height: 100vh; /* Altura da div de 100% da altura da viewport */
+    background-image: url('image\ 5.png'); /* Substitua pela URL da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.circle-text {
+    color: #fff;
+    margin-top: 10px;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 18px;
+}
