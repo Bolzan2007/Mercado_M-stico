@@ -9,19 +9,20 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="brand-title">Shoe Shack</div>
+        <a href="about.html" class="brand-title">Shoe Shack</a>
         <div class="search-container">
             <input type="text" class="search-bar" placeholder="Pesquisar...">
+            <img src="file (1) 1.png" alt="Icon" class="nav-icon" onclick="toggleCart()">
         </div>
     </div>
     <div class="background-image"></div>
     <div class="circle-container">
         <div class="circle">
-            <img src="image 6.png" alt="Sneakers">
+            <img src="image 7.png" alt="Sneakers">
             <div class="circle-text">Sneakers</div>
         </div>
         <div class="circle">
-            <img src="image 7.png" alt="Insoles">
+            <img src="image 6.png" alt="Insoles">
             <div class="circle-text">Insoles</div>
         </div>
         <div class="circle">
@@ -29,5 +30,54 @@
             <div class="circle-text">Socks</div>
         </div>
     </div>
+    <div class="products-container">
+        <div class="product">
+            <img src="image 3.png" alt="Product 1">
+            <div class="product-description">
+                <h3>Produto 1</h3>
+                <p>Descrição do Produto 1.</p>
+                <p class="additional-info">Informação adicional sobre o Produto 1.</p>
+                <p class="price">R$ 99,90</p>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+        <div class="product reverse">
+            <img src="image 4.png" alt="Product 2">
+            <div class="product-description">
+                <h3>Produto 2</h3>
+                <p>Descrição do Produto 2.</p>
+                <p class="additional-info">Informação adicional sobre o Produto 2.</p>
+                <p class="price">R$ 149,90</p>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="image 1.png" alt="Product 3">
+            <div class="product-description">
+                <h3>Produto 3</h3>
+                <p>Descrição do Produto 3.</p>
+                <p class="additional-info">Informação adicional sobre o Produto 3.</p>
+                <p class="price">R$ 199,90</p>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrinho de Compras -->
+    <div id="cart" class="cart">
+        <h2>Carrinho de Compras</h2>
+        <p>Seu carrinho está vazio.</p>
+    </div>
+
+    <script>
+        function toggleCart() {
+            var cart = document.getElementById('cart');
+            if (cart.style.display === 'block') {
+                cart.style.display = 'none';
+            } else {
+                cart.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
