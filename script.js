@@ -1,57 +1,40 @@
-function toggleCart() {
-    var cart = document.getElementById('cart');
-    if (cart.style.display === 'block') {
-        cart.style.display = 'none';
+const products = [
+    { id: 1, name: "TurboIImpulse 1 Nike x ShoeShack", price: 359.90 },
+    { id: 2, name: "HighJump2 Nike x ShoeShack", price: 499.90 },
+    { id: 3, name: "SprintSolar1 Nike x ShoeShack", price: 1199.90 },
+    { id: 4, name: "VelocityVortex 1.0 Super Velocity", price: 69.99 },
+    { id: 5, name: "SpeedForce Sneakers Best Super Jump", price: 99.99 },
+    { id: 6, name: "HyperHustle Espectro Teleport", price: 129.99 },
+    { id: 7, name: "Adereo Socks x Aderencia extrema", price: 89.99 },
+    { id: 8, name: "PowerPeds x Velocity", price: 119.99 },
+    { id: 9, name: "DynamoDashes Plus Combo", price: 189.90 },
+];
+
+let cart = [];
+
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    cart.push(product);
+    updateCart();
+}
+
+function updateCart() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const emptyCartMessage = document.getElementById('empty-cart-message');
+    cartItemsContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+        emptyCartMessage.style.display = 'block';
     } else {
-        cart.style.display = 'block';
+        emptyCartMessage.style.display = 'none';
+        cart.forEach(product => {
+            const cartItem = document.createElement('div');
+            cartItem.innerText = `${product.name} - R$ ${product.price.toFixed(2)}`;
+            cartItemsContainer.appendChild(cartItem);
+        });
     }
 }
-document.addEventListener('DOMContentLoaded', () => {
-    var cart = [];
 
-    function toggleCart() {
-        var cartElement = document.getElementById('cart');
-        cartElement.style.display = cartElement.style.display === 'block' ? 'none' : 'block';
-    }
-
-    function addToCart(productId) {
-        const productElement = document.querySelector(`.product-description[data-id='${productId}']`);
-        const productName = productElement.getAttribute('data-name');
-        const productPrice = productElement.getAttribute('data-price');
-
-        const product = { id: productId, name: productName, price: parseFloat(productPrice) };
-        cart.push(product);
-        updateCartDisplay();
-    }
-
-    function removeFromCart(productId) {
-        cart = cart.filter(product => product.id !== productId);
-        updateCartDisplay();
-    }
-
-    function updateCartDisplay() {
-        const cartItemsContainer = document.getElementById('cart-items');
-        const emptyCartMessage = document.getElementById('empty-cart-message');
-
-        cartItemsContainer.innerHTML = '';
-        
-        if (cart.length === 0) {
-            emptyCartMessage.style.display = 'block';
-        } else {
-            emptyCartMessage.style.display = 'none';
-            cart.forEach(product => {
-                const productElement = document.createElement('div');
-                productElement.className = 'cart-item';
-                productElement.innerHTML = `
-                    <p>${product.name} - R$ ${product.price.toFixed(2)}</p>
-                    <button onclick="removeFromCart(${product.id})">Remover</button>
-                `;
-                cartItemsContainer.appendChild(productElement);
-            });
-        }
-    }
-
-    window.addToCart = addToCart;
-    window.removeFromCart = removeFromCart;
-    window.toggleCart = toggleCart;
-});
+function toggleCart() {
+    const cartElement = document.getElementById('cart');
+    cartElement.style.display = (cartElement.style.display === '
