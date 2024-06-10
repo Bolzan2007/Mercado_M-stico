@@ -1,224 +1,198 @@
-html {
-    scroll-behavior: smooth;
-}
-
-/* Estilização geral do corpo da página */
 body {
     margin: 0;
-    /* Remove a margem padrão */
-    padding: 0;
-    /* Remove o preenchimento padrão */
-    font-family: 'Jockey One', sans-serif;
-    /* Define a fonte da página */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Fundo para contraste */
 }
 
-/* Estilização da barra de navegação */
 .navbar {
-    display: flex;
-    /* Define um layout flexível para a barra de navegação */
-    justify-content: space-between;
-    /* Espaça os itens da barra de navegação */
-    align-items: center;
-    /* Alinha os itens da barra de navegação verticalmente */
-    background-color: #000000;
-    /* Define a cor de fundo da barra de navegação */
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
     padding: 10px 20px;
-    /* Adiciona preenchimento à barra de navegação */
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Jockey One', sans-serif;
 }
 
-/* Estilização do título da marca */
 .brand-title {
     font-size: 24px;
-    /* Define o tamanho da fonte do título */
-    color: #FFFFFF;
-    /* Define a cor do texto do título */
+    color: #fff;
     text-decoration: none;
-    /* Remove a sublinha do título */
 }
 
-/* Estilização do contêiner de busca */
 .search-container {
     display: flex;
-    /* Define um layout flexível para o contêiner de busca */
     align-items: center;
-    /* Alinha os itens do contêiner de busca verticalmente */
+    flex-grow: 1;
+    justify-content: flex-end;
 }
 
-/* Estilização da barra de busca */
 .search-bar {
-    padding: 5px;
-    /* Adiciona preenchimento à barra de busca */
+    width: 200px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 25px;
     font-size: 16px;
-    /* Define o tamanho da fonte da barra de busca */
+    outline: none;
 }
 
-/* Estilização do ícone de navegação */
+.search-bar::placeholder {
+    color: #888;
+}
+
 .nav-icon {
-    width: 24px;
-    /* Define a largura do ícone */
-    height: 24px;
-    /* Define a altura do ícone */
+    width: 30px;
+    height: 30px;
     margin-left: 10px;
-    /* Adiciona margem à esquerda do ícone */
     cursor: pointer;
-    /* Define um cursor de ponteiro ao passar o mouse sobre o ícone */
 }
 
-/* Estilização da imagem de fundo */
 .background-image {
-    width: 100%;
-    /* Define a largura da imagem de fundo */
-    height: 300px;
-    /* Define a altura da imagem de fundo */
-    background-image: url("background.jpg");
-    /* Define a URL da imagem de fundo */
+    margin-top: 60px; /* Espaço para a navbar fixa */
+    height: 100vh; /* Altura da div de 100% da altura da viewport */
+    background-image: url('image\ 5.png'); /* Substitua pela URL da sua imagem */
     background-size: cover;
-    /* Define que a imagem deve cobrir todo o fundo */
     background-position: center;
-    /* Define que a posição da imagem deve ser centralizada */
+    background-repeat: no-repeat;
 }
 
-/* Estilização do contêiner de círculos */
 .circle-container {
     display: flex;
-    /* Define um layout flexível para o contêiner de círculos */
-    justify-content: space-around;
-    /* Espaça os círculos dentro do contêiner */
-    padding: 20px 0;
-    /* Adiciona preenchimento ao contêiner de círculos */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
 }
 
-/* Estilização dos círculos */
 .circle {
     display: flex;
-    /* Define um layout flexível para o círculo */
     flex-direction: column;
-    /* Define a direção dos itens dentro do círculo como coluna */
     align-items: center;
-    /* Alinha os itens dentro do círculo ao centro */
-    text-align: center;
-    /* Define o alinhamento do texto dentro do círculo como centralizado */
 }
 
-/* Estilização do texto dentro dos círculos */
+.circle img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .circle-text {
     margin-top: 10px;
-    /* Adiciona margem ao topo do texto */
+    font-family: 'Jockey One', sans-serif;
     font-size: 18px;
-    /* Define o tamanho da fonte do texto */
-    color: #000000;
-    /* Define a cor do texto */
 }
 
-/* Estilização do contêiner de produtos */
 .products-container {
-    display: flex;
-    /* Define um layout flexível para o contêiner de produtos */
-    flex-wrap: wrap;
-    /* Permite que os itens dentro do contêiner sejam dispostos em várias linhas */
-    justify-content: space-around;
-    /* Espaça os itens dentro do contêiner */
+    margin: 40px auto;
     padding: 20px;
-    /* Adiciona preenchimento ao contêiner de produtos */
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Estilização individual dos produtos */
 .product {
     display: flex;
-    /* Define um layout flexível para o produto */
-    flex-direction: column;
-    /* Define a direção dos itens dentro do produto como coluna */
     align-items: center;
-    /* Alinha os itens dentro do produto ao centro */
-    text-align: center;
-    /* Define o alinhamento do texto dentro do produto como centralizado */
-    width: 200px;
-    /* Define a largura do produto */
-    margin-bottom: 20px;
-    /* Adiciona margem ao fundo do produto */
+    gap: 20px;
 }
 
-/* Estilização reversa dos produtos */
 .product.reverse {
-    flex-direction: column-reverse;
-    /* Define a direção dos itens dentro do produto como coluna reversa */
+    flex-direction: row-reverse;
 }
 
-/* Estilização das descrições dos produtos */
+.product img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .product-description {
-    display: flex;
-    /* Define um layout flexível para a descrição do produto */
-    flex-direction: column;
-    /* Define a direção dos itens dentro da descrição como coluna */
-    align-items: center;
-    /* Alinha os itens dentro da descrição ao centro */
-    text-align: center;
-    /* Define o alinhamento do texto dentro da descrição como centralizado */
-    padding: 10px;
-    /* Adiciona preenchimento à descrição */
+    font-family: 'Jockey One', sans-serif;
 }
 
-/* Estilização das informações adicionais */
-.additional-info {
-    display: none;
-    /* Define que as informações adicionais não serão exibidas por padrão */
-}
-
-/* Estilização dos preços dos produtos */
-.price {
+.product-description h3 {
+    margin: 0;
     font-size: 20px;
-    /* Define o tamanho da fonte do preço */
-    color: #000000;
-    /* Define a cor do texto do preço */
 }
 
-/* Estilização dos botões de compra */
-.buy-button {
-    padding: 10px 20px;
-    /* Adiciona preenchimento ao botão de compra */
-    background-color: #000000;
-    /* Define a cor de fundo do botão de compra */
-    color: #FFFFFF;
-    /* Define a cor do texto do botão de compra */
-    border: none;
-    /* Remove a borda do botão de compra */
-    cursor: pointer;
-    /* Define um cursor de ponteiro ao passar o mouse sobre o botão de compra */
+.product-description p {
+    margin: 5px 0 0 0;
+    font-size: 16px;
+}
+
+.additional-info {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
     margin-top: 10px;
-    /* Adiciona margem ao topo do botão de compra */
 }
 
-/* Estilização do carrinho de compras */
-.cart {
-    position: fixed;
-    /* Define a posição fixa do carrinho de compras */
-    top: 0;
-    /* Define a posição superior do carrinho de compras */
-    right: 0;
-    /* Define a posição direita do carrinho de compras */
-    width: 300px;
-    /* Define a largura do carrinho de compras */
-    height: 100%;
-    /* Define a altura do carrinho de compras */
-    background-color: #FFFFFF;
-    /* Define a cor de fundo do carrinho de compras */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    /* Adiciona sombra ao carrinho de compras */
+.buy-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: #333;
+}
+
+.content {
     padding: 20px;
-    /* Adiciona preenchimento ao carrinho de compras */
+    max-width: 800px;
+    margin: 80px auto 0 auto;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Jockey One', sans-serif;
+    text-align: center;
+}
+
+/* Carrinho de Compras */
+.cart {
     display: none;
-    /* Define que o carrinho de compras não será exibido por padrão */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    font-family: 'Jockey One', sans-serif;
+    text-align: center;
 }
 
-/* Estilização dos itens do carrinho de compras */
-#cart-items {
-    margin-top: 20px;
-    /* Adiciona margem ao topo dos itens do carrinho */
+.cart h2 {
+    margin-top: 0;
+    font-size: 24px;
 }
-
-/* Estilização da mensagem de carrinho vazio */
-#empty-cart-message {
-    display: none;
-    /* Define que a mensagem de carrinho vazio não será exibida por padrão */
-}
-
